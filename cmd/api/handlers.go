@@ -45,14 +45,14 @@ func (app *application) authenticate(w http.ResponseWriter, r *http.Request) {
 	// validate user in database
 	user, err := app.DB.GetUserByEmail(requestPayload.Email)
 	if err != nil {
-		app.errorJSON(w, errors.New("invalid credentials"), http.StatusBadRequest)
+		app.errorJSON(w, errors.New("Invalid credentials"), http.StatusBadRequest)
 		return
 	}
 
 	// check passwords
 	valid, err := user.PasswordMatches(requestPayload.Password)
 	if err != nil || !valid {
-		app.errorJSON(w, errors.New("invalid credentials"), http.StatusBadRequest)
+		app.errorJSON(w, errors.New("Invalid credentials"), http.StatusBadRequest)
 		return
 	}
 
