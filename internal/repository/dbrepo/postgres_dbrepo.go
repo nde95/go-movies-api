@@ -206,7 +206,7 @@ func (m *PostgresDBRepo) OneMovieForEdit(id int) (*models.Movie, []*models.Genre
 
 	query = `
 		select 
-			id, genre, 
+			id, genre
 		from 
 			genres
 		order by
