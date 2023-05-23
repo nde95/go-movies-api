@@ -348,7 +348,7 @@ func (m *PostgresDBRepo) InsertMovie(movie models.Movie) (int, error) {
 				mpaa_rating,
 				created_at,
 				updated_at,
-				image,)
+				image)
 			values
 				($1, $2, $3, $4, $5, $6, $7, $8)
 			returning 
